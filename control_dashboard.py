@@ -145,3 +145,19 @@ def render_panel_control():
                             st.error(resultado.get("error", "Error desconocido"))
                         time.sleep(1)
                         st.rerun()
+
+
+# ---------------------------------------------------------------------------
+# Punto de entrada: esto es lo que hace que la app pinte algo al desplegarla
+# como aplicación independiente en Streamlit Cloud. Si en el futuro importas
+# este archivo como módulo desde otro dashboard (en vez de desplegarlo solo),
+# puedes quitar este bloque y llamar a render_panel_control() tú mismo desde
+# el archivo principal.
+# ---------------------------------------------------------------------------
+st.set_page_config(
+    page_title="Control Apps Script",
+    page_icon="🛠️",
+    layout="wide",
+)
+st.title("🛠️ Control de Apps Script")
+render_panel_control()
